@@ -1,27 +1,37 @@
 export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: '"Avenir Next", system-ui, sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 400,
+    heading: 600,
     bold: 700
   },
   lineHeights: {
-    body: 1.5,
-    heading: 1.125
+    body: 1.75,
+    heading: 1.25
   },
   colors: {
     text: '#000',
     'on-primary-text': '#fff',
     background: '#fff',
-    primary: '#d81b60',
+    primary: '#880e4f',
     secondary: '#6a1b9a',
-    muted: '#f6f6f6'
+    muted: '#f6f6f6',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0fc',
+        secondary: '#0cf',
+        highlight: '#f0c',
+        muted: '#011'
+      }
+    }
   },
   styles: {
     root: {

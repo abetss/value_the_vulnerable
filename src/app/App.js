@@ -5,6 +5,7 @@ import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { jsx } from 'theme-ui';
 import { Layout } from './components/Layout';
+import { Introduction } from '../components';
 
 const questions = [
   {
@@ -40,7 +41,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <span>Main content</span>
+        <Introduction />
       </Layout>
     </ThemeProvider>
   );
