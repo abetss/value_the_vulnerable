@@ -31,8 +31,8 @@ export const Layout = props => {
           width: '100%',
           flex: '1 1 auto',
           'min-height': '100%',
-          px: '7',
-          pt: 4
+          px: [3, 4, 7],
+          pt: [3, 2, 4]
         }}
       >
         {props.children}
