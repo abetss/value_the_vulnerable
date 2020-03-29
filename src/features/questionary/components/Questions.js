@@ -6,8 +6,9 @@ const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) 
   return (
     <Flex mb={3}>
       {choices.map((choice, index) => (
-        <Label key={`choices-${questionNumber}-${index}`}>
+        <Label key={`choices-${questionNumber}-${index}`} sx={{ alignItems: 'center' }}>
           <Radio
+            sx={{ ml: 3 }}
             name={name}
             onChange={() => {
               onChange({ answer: choice });
@@ -51,9 +52,9 @@ export const Question = ({ question, answerType, answerChoices, explainMoreText,
         </Text>
       </Box>
       <Box mt="4">
-        {(answerType === 'multiple' || answerType === 'yes-no') && (
+        {(answerType === 'multiple' || answerType === 'single' || answerType === 'yes-no') && (
           <MultipleChoices
-            choices={answerType === 'multiple' ? answerChoices : ['Yes', 'No']}
+            choices={answerType === 'multiple' || answerType === 'single' ? answerChoices : ['Yes', 'No']}
             name={answerType}
             questionNumber={questionNumber}
             onChange={onChange}
