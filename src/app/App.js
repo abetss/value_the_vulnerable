@@ -15,8 +15,6 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [pageName, setPageName] = useState('introduction');
 
-  console.log(JSON.stringify(newQuestions));
-
   const handleSurveySubmission = useCallback(submission => {
     setPageName('thankyou');
     console.log('submission', submission);
@@ -87,7 +85,7 @@ function App() {
      */
   });
 
-  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
+  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort)).slice(0,1);
   // .slice(0, 4); // uncomment if you wanna test submission with only 4 questions
 
   return (
