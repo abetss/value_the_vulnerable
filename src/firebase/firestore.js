@@ -15,6 +15,7 @@ export async function getQuestions() {
 
 export function submitQuestionnaire (submission) {
     console.log(submission);
+
     submission.forEach(answer => {
 
         console.log(answer);
@@ -33,8 +34,9 @@ export function submitQuestionnaire (submission) {
     });
 
     let submissionObject = {};
+
     submission.forEach(item => {
-        submissionObject[item.questionID] = item.answer;
+        submissionObject[item.questionId] = item.answer;
     });
 
     console.log(submissionObject);
