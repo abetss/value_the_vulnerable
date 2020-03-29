@@ -8,11 +8,11 @@ import { Introduction, Layout, SubmissionThankYou } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
 import { questions as JSONQuestions } from './questions';
 import { Report } from '../features/report/Report.container';
-import {getQuestions, submitQuestionaire} from "../firebase/firestore";
+import { getQuestions, submitQuestionnaire } from '../firebase/firestore';
 
 function App() {
   const [surveysAggregationData, setSurveysAggregationData] = useState(null);
-  const [questions, setQuestions] = useState(JSONQuestions);
+  const [questions, setQuestions] = useState([]);
   const [pageName, setPageName] = useState('introduction');
 
   const handleSurveySubmission = useCallback(submission => {
@@ -60,11 +60,12 @@ function App() {
     //   }
     // ];
 
-    submitQuestionaire(submission)
+    submitQuestionnaire(submission);
   }, []);
 
-  useEffect(function () {
-    getQuestions().then(data => { // will return the json stored at questions.all.data
+  useEffect(function() {
+    getQuestions().then(data => {
+      // will return the json stored at questions.all.data
       setQuestions(data);
     });
 
@@ -90,7 +91,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        {pageName === 'introduction' && <Introduction onNextClicked={setPageName} />}
+        {pageName === 'introduction' && (
+          <Introduction onNextClicked={setPageName} showLoading={questions.length === 0} />
+        )}
         {pageName === 'survey' && <Questionary questions={sortedQuestions} onSubmit={handleSurveySubmission} />}
         {pageName === 'thankyou' && <SubmissionThankYou onSetPage={setPageName} />}
         {pageName === 'report' && <Report />}
