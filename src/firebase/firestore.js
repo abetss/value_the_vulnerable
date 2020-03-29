@@ -31,8 +31,17 @@ export function submitQuestionaire (submission) {
             answerRef.set(updateObject);
         });
 
-
     });
 
+    let submissionObject = {};
+    submission.forEach(item => {
+        submissionObject[item.questionID] = item.answer;
+    });
+
+    console.log(submissionObject);
+
+    let answerRef = db.collection("answers-writtenout").doc();
+
+    answerRef.set(submissionObject);
 
 }
