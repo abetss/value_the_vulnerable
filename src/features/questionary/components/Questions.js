@@ -1,13 +1,19 @@
 /** @jsx jsx */
 import React from 'react';
-import { Text, Box, Flex, Input, jsx, Label, Radio, Textarea } from 'theme-ui';
+import { Text, Box, Flex, Input, jsx, Label, Radio, Textarea, Progress } from 'theme-ui';
 
 const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) => {
   return (
     <Flex mb={3}>
       {choices.map((choice, index) => (
         <Label key={`choices-${questionNumber}-${index}`}>
-          <Radio name={name} onChange={onChange} /> {choice}
+          <Radio
+            name={name}
+            onChange={() => {
+              onChange({ answer: choice });
+            }}
+          />{' '}
+          {choice}
         </Label>
       ))}
     </Flex>
@@ -34,23 +40,30 @@ export const Question = ({ question, answerType, answerChoices, explainMoreText,
         <Text as="span" sx={{ fontSize: 2 }}>
           Question {questionNumber} of {total}
         </Text>
+        <Progress max={1} value={questionNumber / total}>
+          {' '}
+          Question {questionNumber} of {total}
+        </Progress>
       </Box>
-      <Box>
+      <Box mt="3">
         <Text as="span" sx={{ fontSize: 4 }}>
           {question}
         </Text>
       </Box>
-      <Box mt="3">
+      <Box mt="4">
         {(answerType === 'multiple' || answerType === 'yes-no') && (
           <MultipleChoices
             choices={answerType === 'multiple' ? answerChoices : ['Yes', 'No']}
             name={answerType}
             questionNumber={questionNumber}
+            onChange={onChange}
           />
         )}
-        {answerType === 'text' && <TextInput type={answerType} onChange={onChange} />}
-        {answerType === 'number' && <NumberInput onChange={onChange} />}
-        {explainMoreText && <TextInput type="text" label={explainMoreText} onChange={onChange} />}
+        {answerType === 'text' && <TextInput type={answerType} onChange={e => onChange({ answer: e.target.value })} />}
+        {answerType === 'number' && <NumberInput onChange={e => onChange({ answer: e.target.value })} />}
+        {explainMoreText && (
+          <TextInput type="text" label={explainMoreText} onChange={e => onChange({ explainMore: e.target.value })} />
+        )}
       </Box>
     </Flex>
   );

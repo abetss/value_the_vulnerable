@@ -7,6 +7,7 @@ import { jsx } from 'theme-ui';
 import { Introduction, Layout } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
 import { questions as JSONQuestions } from './questions';
+import { Report } from '../features/report/Report.container';
 
 function App() {
   const [surveysAggregationData, setSurveysAggregationData] = useState(null);
@@ -14,6 +15,8 @@ function App() {
   const [pageName, setPageName] = useState('introduction');
 
   const handleSurveySubmission = useCallback(submission => {
+    setPageName('report');
+    console.log('submission', submission);
     /* add logic to handle survey submission here
     /
     / after the server responded with surveys aggregation data, call setSurveysAggregationData with
@@ -58,12 +61,14 @@ function App() {
   });
 
   const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
+  // .slice(0, 4); // uncomment if you wanna test submission with only 4 questions
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         {pageName === 'introduction' && <Introduction onNextClicked={setPageName} />}
         {pageName === 'survey' && <Questionary questions={sortedQuestions} onSubmit={handleSurveySubmission} />}
+        {pageName === 'report' && <Report />}
       </Layout>
     </ThemeProvider>
   );
