@@ -49,7 +49,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Layout>
         {/* <Introduction /> */}
-        <Questionary questions={questions} />
+        <Questionary questions={questions.sort((a, b) => a.sort < b.sort)} />
       </Layout>
     </ThemeProvider>
   );

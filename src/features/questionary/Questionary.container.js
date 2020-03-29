@@ -5,18 +5,18 @@ import { Question } from './components/Questions';
 import { SecondaryButton, PrimaryButton } from '../../components';
 
 export const Questionary = ({ questions = [], onComplete }) => {
-  const [questionNumber, setQuestionNumber] = useState(1);
-  const [answers, setAnswers] = useState([]);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  // const [answers, setAnswers] = useState([]);
 
   const handlePrevClick = useCallback(() => {
-    if (questionNumber === 0) return;
-    setQuestionNumber(questionNumber - 1);
-  }, [questionNumber]);
+    if (questionIndex === -1) return;
+    setQuestionIndex(questionIndex - 1);
+  }, [questionIndex]);
 
-  const handleNextClick = useCallback(() => {
-    // setAnswers([])
-    setQuestionNumber(questionNumber - 1);
-  }, [questionNumber]);
+  // const handleNextClick = useCallback(() => {
+  //   // setAnswers([])
+  //   setQuestionIndex(questionIndex - 1);
+  // }, [questionIndex]);
 
   // const handleOnAnswerChange = useCallback(() => {
   //   setAnswers
@@ -26,7 +26,7 @@ export const Questionary = ({ questions = [], onComplete }) => {
     console.log('data', data);
   }, []);
 
-  const question = questions.find(q => q.sort === questionNumber);
+  const question = questions[questionIndex];
 
   if (!question) {
     return <Text>There was an error with are data. We will try to fix it ASAP.</Text>;
@@ -34,15 +34,15 @@ export const Questionary = ({ questions = [], onComplete }) => {
 
   return (
     <React.Fragment>
-      <Question {...question} total={questions.length} onChange={handleOnChange} />
+      <Question {...question} total={questions.length} onChange={handleOnChange} questionNumber={questionIndex + 1} />
 
       <Box alignItems="center">
         <SecondaryButton disable={true} title="Prev" onClick={handlePrevClick} />
-        {questionNumber < questions.length && (
-          <PrimaryButton title="Next" onClick={() => setQuestionNumber(questionNumber + 1)} />
+        {questionIndex < questions.length && (
+          <PrimaryButton title="Next" onClick={() => setQuestionIndex(questionIndex + 1)} />
         )}
-        {questionNumber === questions.length && (
-          <PrimaryButton title="Submit" onClick={() => setQuestionNumber(questionNumber)} />
+        {questionIndex === questions.length && (
+          <PrimaryButton title="Submit" onClick={() => setQuestionIndex(questionIndex)} />
         )}
       </Box>
     </React.Fragment>

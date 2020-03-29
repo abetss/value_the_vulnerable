@@ -2,11 +2,11 @@
 import React from 'react';
 import { Text, Box, Flex, Input, jsx, Label, Radio, Textarea } from 'theme-ui';
 
-const MultipleChoices = ({ name, choices, sort, onChange, ...props }) => {
+const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) => {
   return (
     <Flex mb={3}>
       {choices.map((choice, index) => (
-        <Label key={`choices-${sort}-${index}`}>
+        <Label key={`choices-${questionNumber}-${index}`}>
           <Radio name={name} onChange={onChange} /> {choice}
         </Label>
       ))}
@@ -27,12 +27,12 @@ const TextInput = ({ name = 'input-x', label, type, onChange }) => (
   </React.Fragment>
 );
 
-export const Question = ({ question, answerType, answerChoices, explainMoreText, sort, total, onChange }) => {
+export const Question = ({ question, answerType, answerChoices, explainMoreText, questionNumber, total, onChange }) => {
   return (
     <Flex sx={{ flexDirection: 'column' }}>
       <Box mt="3">
         <Text as="span" sx={{ fontSize: 2 }}>
-          Question {sort} of {total}
+          Question {questionNumber} of {total}
         </Text>
       </Box>
       <Box>
@@ -45,7 +45,7 @@ export const Question = ({ question, answerType, answerChoices, explainMoreText,
           <MultipleChoices
             choices={answerType === 'multiple' ? answerChoices : ['Yes', 'No']}
             name={answerType}
-            sort={sort}
+            questionNumber={questionNumber}
           />
         )}
         {answerType === 'text' && <TextInput type={answerType} onChange={onChange} />}
