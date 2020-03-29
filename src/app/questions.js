@@ -489,7 +489,7 @@ export const newQuestions = [
     group: 'How do you feel?'
   },
   {
-    question: 'Has this changes since before the crisis?',
+    question: 'Has this changed since before the crisis?',
     answerType: 'multiple',
     answerChoices: [
       'Yes, I feel less safe than before',
