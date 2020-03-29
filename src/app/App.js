@@ -8,7 +8,7 @@ import { Introduction, Layout, SubmissionThankYou } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
 import { questions as JSONQuestions, newQuestions } from './questions';
 import { Report } from '../features/report/Report.container';
-import { getQuestions, submitQuestionnaire } from '../firebase/firestore';
+import {getAnswers, getQuestions, submitQuestionnaire} from '../firebase/firestore';
 
 function App() {
   const [surveysAggregationData, setSurveysAggregationData] = useState(null);
@@ -61,6 +61,11 @@ function App() {
     // ];
 
     submitQuestionnaire(submission);
+
+    getAnswers().then(answers => {
+
+    });
+
   }, []);
 
   useEffect(function() {

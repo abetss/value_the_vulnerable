@@ -46,3 +46,18 @@ export function submitQuestionnaire (submission) {
     answerRef.set(submissionObject);
 
 }
+
+export async function getAnswers () {
+
+    let res = {};
+
+    let answerRef = db.collection("answers");
+    let snapshot = await answerRef.get();
+
+    for (const doc of snapshot.docs) {
+        res[doc.id] = doc.data();
+    }
+
+    return res;
+
+}
