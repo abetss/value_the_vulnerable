@@ -13,7 +13,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
         representation...
       </Box>
 
-      <Flex mt="6" sx={{ flexDirection: 'column', alignItems: 'center' }}>
+      <Flex mt={[4, 5, 6]} sx={{ flexDirection: 'column', alignItems: 'center' }}>
         {showLoading && (
           <Flex sx={{ display: 'absolute', alignItems: 'center' }}>
             <Text>Loading questions</Text>
@@ -26,8 +26,8 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
           }}
           alignSelf="center"
           sx={{
-            mt: 3,
-            width: ['90%', '70%', '50%'],
+            mt: [2, 3, 3],
+            width: ['100%', '70%', '50%'],
             alignSelf: 'center'
           }}
           title="Start Questionary"

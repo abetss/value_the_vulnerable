@@ -5,7 +5,6 @@ import { Button, jsx } from 'theme-ui';
 export const SecondaryButton = ({ title, ...props }) => (
   <Button
     {...props}
-    mt="6"
     mr="1"
     bg="background"
     borderColor="primary"

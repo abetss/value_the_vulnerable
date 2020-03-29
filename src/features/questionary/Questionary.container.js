@@ -83,9 +83,13 @@ export const Questionary = ({ questions = [], onSubmit }) => {
       <Question {...question} total={questions.length} onChange={handleOnChange} questionNumber={questionIndex + 1} />
 
       <Box alignItems="center">
-        <SecondaryButton disable={true} title="Prev" onClick={handlePrevClick} />
-        {questionIndex < questions.length - 1 && <PrimaryButton title="Next" onClick={handleNextClick} />}
-        {questionIndex === questions.length - 1 && <PrimaryButton title="Submit" onClick={handleSubmitClick} />}
+        <SecondaryButton disable={true} mt={[2, 4, 5]} title="Prev" onClick={handlePrevClick} />
+        {questionIndex < questions.length - 1 && (
+          <PrimaryButton mt={[2, 4, 5]} title="Next" onClick={handleNextClick} />
+        )}
+        {questionIndex === questions.length - 1 && (
+          <PrimaryButton mt={[2, 4, 5]} title="Submit" onClick={handleSubmitClick} />
+        )}
       </Box>
     </React.Fragment>
   );

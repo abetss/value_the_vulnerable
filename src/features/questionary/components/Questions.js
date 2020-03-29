@@ -4,7 +4,7 @@ import { Text, Box, Flex, Input, jsx, Label, Radio, Textarea, Progress } from 't
 
 const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) => {
   return (
-    <Flex mb={3}>
+    <Flex mb={3} sx={{ flexDirection: 'column' }}>
       {choices.map((choice, index) => (
         <Label key={`choices-${questionNumber}-${index}`} sx={{ alignItems: 'center' }}>
           <Radio
@@ -14,7 +14,7 @@ const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) 
               onChange({ answer: choice });
             }}
           />{' '}
-          {choice}
+          <Text sx={{ 'white-space': 'nowrap' }}>{choice}</Text>
         </Label>
       ))}
     </Flex>
