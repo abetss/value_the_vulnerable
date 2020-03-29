@@ -84,7 +84,8 @@ function App() {
      */
   });
 
-  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort)).slice(0, 2); // uncomment if you wanna test submission with only 4 questions
+  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
+  // .slice(0, 4); // uncomment if you wanna test submission with only 4 questions
 
   return (
     <ThemeProvider theme={theme}>
