@@ -11,6 +11,7 @@ import { questions as JSONQuestions } from './questions';
 function App() {
   const [surveysAggregationData, setSurveysAggregationData] = useState(null);
   const [questions, setQuestions] = useState(JSONQuestions);
+  const [pageName, setPageName] = useState('introduction');
 
   const handleSurveySubmission = useCallback(submission => {
     /* add logic to handle survey submission here
@@ -56,11 +57,13 @@ function App() {
      */
   });
 
+  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        {/* <Introduction /> */}
-        <Questionary questions={questions.sort((a, b) => a.sort < b.sort)} onSubmit={handleSurveySubmission} />
+        {pageName === 'introduction' && <Introduction onNextClicked={setPageName} />}
+        {pageName === 'survey' && <Questionary questions={sortedQuestions} onSubmit={handleSurveySubmission} />}
       </Layout>
     </ThemeProvider>
   );

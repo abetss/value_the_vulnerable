@@ -5,7 +5,7 @@ import { Heading, Box, Flex, Button, jsx } from 'theme-ui';
 export const Introduction = props => {
   return (
     <Flex sx={{ flexDirection: 'column' }}>
-      <Heading>Introduction</Heading>
+      <Heading mt="4">Introduction</Heading>
       <Box mt="3">
         We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific
         representation...
@@ -13,6 +13,7 @@ export const Introduction = props => {
       <Button
         mt="6"
         bg="secondary"
+        onClick={() => props.onNextClicked('survey')}
         sx={{
           width: ['90%', '70%', '50%'],
           alignSelf: 'center',

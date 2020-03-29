@@ -47,7 +47,7 @@ export const questions = [
 
   {
     question: 'If you are quarantined, how many people are you quarantined with?',
-    answerType: 'numerical',
+    answerType: 'number',
     answerChoices: [],
     explainMoreText: null,
     id: 5,
@@ -257,7 +257,7 @@ export const questions = [
 
   {
     question: 'How old are you?',
-    answerType: 'numerical',
+    answerType: 'number',
     answerChoices: [],
     explainMoreText: null,
     id: 28,
@@ -337,7 +337,7 @@ export const questions = [
 
   {
     question: 'How many children do you have?',
-    answerType: 'numerical',
+    answerType: 'number',
     answerChoices: [],
     explainMoreText: null,
     id: 36,

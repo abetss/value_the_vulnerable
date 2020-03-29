@@ -16,7 +16,7 @@ const MultipleChoices = ({ name, choices, questionNumber, onChange, ...props }) 
 
 const NumberInput = ({ onChange }) => (
   <React.Fragment>
-    <Input mb={3} type="number" onChange={onChange} />
+    <Input mb={3} sx={{ width: 4 }} type="number" onChange={onChange} />
   </React.Fragment>
 );
 
