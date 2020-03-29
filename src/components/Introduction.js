@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { Heading, Box, Flex, jsx, Divider, Link, Text } from 'theme-ui';
+import { Heading, Box, Flex, jsx, Divider, Link, Text, Spinner } from 'theme-ui';
 import { PrimaryButton } from './PrimaryButton';
 
-export const Introduction = ({ onNextClicked, ...props }) => {
+export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
   return (
     <Flex sx={{ flexDirection: 'column' }}>
       <Heading mt="4" color="primary">
@@ -12,16 +12,28 @@ export const Introduction = ({ onNextClicked, ...props }) => {
         We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific
         representation...
       </Box>
-      <PrimaryButton
-        onClick={() => onNextClicked('survey')}
-        alignSelf="center"
-        mt="6"
-        sx={{
-          width: ['90%', '70%', '50%'],
-          alignSelf: 'center'
-        }}
-        title="Start Questionary"
-      />
+
+      <Flex mt="6" sx={{ flexDirection: 'column', alignItems: 'center' }}>
+        {showLoading && (
+          <Flex sx={{ display: 'absolute', alignItems: 'center' }}>
+            <Text>Loading questions</Text>
+            <Spinner ml="3" />
+          </Flex>
+        )}
+        <PrimaryButton
+          onClick={() => {
+            !showLoading && onNextClicked('survey');
+          }}
+          alignSelf="center"
+          sx={{
+            mt: 3,
+            width: ['90%', '70%', '50%'],
+            alignSelf: 'center'
+          }}
+          title="Start Questionary"
+        />
+      </Flex>
+
       <Divider mt={5} />
       <Box mt="3">
         <Flex>

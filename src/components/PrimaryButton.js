@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Button, jsx } from 'theme-ui';
 
-export const PrimaryButton = ({ title, ...props }) => {
+export const PrimaryButton = ({ title, children, ...props }) => {
   return (
     <Button
       {...props}

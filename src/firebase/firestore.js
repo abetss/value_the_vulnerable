@@ -1,20 +1,19 @@
-import { db, firestore } from "./firebase";
+import { db, firestore } from './firebase';
 
 const increment = firestore.FieldValue.increment(1);
 
 export async function getQuestions() {
-    let docRef = db.collection("questions").doc("all");
+  let docRef = db.collection('questions').doc('all');
 
-    let doc = await docRef.get();
-    let data = await doc.data();
-    let questionsJson = data.data;
-    let questions = await JSON.parse(questionsJson);
+  let doc = await docRef.get();
+  let data = await doc.data();
+  let questionsJson = data.data;
+  let questions = await JSON.parse(questionsJson);
 
-
-    return questions;
+  return questions;
 }
 
-export function submitQuestionaire (submission) {
+export function submitQuestionnaire (submission) {
     console.log(submission);
     submission.forEach(answer => {
 
