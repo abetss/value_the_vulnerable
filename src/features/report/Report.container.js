@@ -32,6 +32,7 @@ const BarGraph = ({ data, labelData, width = 760, height = 300, xDistance = 100,
     <YAxis />
     {/* <HorizontalBarSeries data={data} color={color} /> */}
     <VerticalBarSeries data={data} color={color} />
+    <LabelSeries animation allowOffsetToBeReversed data={data} />
     {/* <LabelSeries data={labelData} getLabel={d => d.y} /> */}
   </FlexibleWidthXYPlot>
 );

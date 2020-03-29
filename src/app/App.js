@@ -11,8 +11,8 @@ import { Report } from '../features/report/Report.container';
 import { getAnswers, getQuestions, submitQuestionnaire } from '../firebase/firestore';
 
 function App() {
-  const [surveysAggregationData, setSurveysAggregationData] = useState(null);
-  const [questions, setQuestions] = useState([]);
+  const [surveysAggregationData, setSurveysAggregationData] = useState(answersAgs); // tODO: remove the default mock value
+  const [questions, setQuestions] = useState(newQuestions);
   const [pageName, setPageName] = useState('introduction');
 
   const handleSurveySubmission = useCallback(submission => {
@@ -27,17 +27,15 @@ function App() {
   }, []);
 
   useEffect(function() {
-    setQuestions(newQuestions);
-    setSurveysAggregationData(answersAgs);
-    // getQuestions().then(data => {
-    //   // will return the json stored at questions.all.data
-    //   console.log('data', data);
-    //   setQuestions(data);
-    // });
-    // getAnswers().then(answers => {
-    //   console.log('answers', JSON.stringify(answers, null, 2));
-    //   setSurveysAggregationData(answers);
-    // });
+    getQuestions().then(data => {
+      // will return the json stored at questions.all.data
+      console.log('data', data);
+      setQuestions(data);
+    });
+    getAnswers().then(answers => {
+      console.log('answers', JSON.stringify(answers, null, 2));
+      setSurveysAggregationData(answers);
+    });
   }, []);
 
   // const surveyResults =
