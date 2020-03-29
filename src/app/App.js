@@ -1,15 +1,16 @@
 /** @jsx jsx */
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { jsx } from 'theme-ui';
 import { Introduction, Layout } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
-import { questions } from './questions';
+import { questions as JSONQuestions } from './questions';
 
 function App() {
   const [surveysAggregationData, setSurveysAggregationData] = useState(null);
+  const [questions, setQuestions] = useState(JSONQuestions);
 
   const handleSurveySubmission = useCallback(submission => {
     /* add logic to handle survey submission here
@@ -36,6 +37,23 @@ function App() {
     ]
     I wonder if we need to add the question text there too?
     */
+  }, []);
+
+  useEffect(() => {
+    /**
+     * get the questions from the backend here
+     * transform it to array of objects of this shape
+     * {
+     *     question: '',
+     *     answerType: '',
+     *     answerChoices: [],
+     *     explainMoreText: null,
+     *     id: 1,
+     *     sort: 1,
+     *     group: ''
+     * }
+     * call setQuestions with the object
+     */
   });
 
   return (
