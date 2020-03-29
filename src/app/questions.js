@@ -595,3 +595,95 @@ export const newQuestions = [
     group: 'personal-questions'
   }
 ];
+
+export const answersAgs = {
+  '1': {
+    'Mostly Well': 3,
+    'Neither good nor bad': 1,
+    'Very Well': 2
+  },
+  '2': {
+    'Quarantine due to law': 1,
+    'Reduced social interactions': 3,
+    'Voluntary quarantine': 1
+  },
+  '3': {
+    'No, on paid leave': 1,
+    'Yes, from home': 4
+  },
+  '4': {
+    'My physical health has not changed much during the crisis': 4,
+    'My physical health is better than before': 1
+  },
+  '5': {
+    'My mental health has not changed much during the crisis': 2,
+    'My mental health is better than before': 1,
+    'My mental health is worse than before': 2
+  },
+  '6': {
+    No: 4,
+    'Yes, I have been diagnosed with the virus': 1
+  },
+  '7': {
+    No: 2,
+    Yes: 3
+  },
+  '8': {
+    'Yes, every day': 2,
+    'Yes, once a few weeks': 1,
+    'Yes, once per week': 2
+  },
+  '9': {
+    'All the time': 3,
+    Often: 1,
+    Sometimes: 1
+  },
+  '10': {
+    Low: 3,
+    Moderate: 1,
+    'Very low': 1
+  },
+  '11': {
+    Often: 1,
+    Rarely: 1,
+    Sometimes: 3
+  },
+  '12': {
+    Sometimes: 5
+  },
+  '13': {
+    Europe: 3,
+    'North America': 2
+  },
+  '14': {
+    Female: 3,
+    Male: 2
+  },
+  '15': {
+    '20 - 29': 2,
+    '30 - 39': 1,
+    '40 - 49': 1,
+    '< 20': 1
+  },
+  '8001': {
+    'No, I connect with other people as often as I used to': 2,
+    'yes, I connect with other people less often': 3
+  },
+  '9001': {
+    'No, I feel as safe or unsafe as before': 5
+  },
+  '10001': {
+    'No, the conflict level has not changed': 3,
+    'Yes, the conflict level has decreased': 1,
+    'Yes, the conflict level has increased': 1
+  },
+  '11001': {
+    'No, I feel as secure or insecure as before': 1,
+    'Yes, I feel more insecure': 4
+  },
+  '12001': {
+    'No, I feel energetic as often as before': 2,
+    'Yes, I feel energetic less often': 2,
+    'Yes, I feel energetic more often': 1
+  }
+};
