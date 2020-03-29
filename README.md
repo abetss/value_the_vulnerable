@@ -1,5 +1,8 @@
 Uses https://theme-ui.com for UI components and theme
 
+Trelo board: https://trello.com/b/3mOeDgo5/valuethevulnerable
+Trelo invitation link: https://trello.com/invite/b/3mOeDgo5/4296f473caf2afbca375529f1531f0ca/valuethevulnerable
+
 ## Available Scripts
 
 In the project directory, you can run:
