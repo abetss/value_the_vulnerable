@@ -31,7 +31,7 @@ export const Layout = props => {
           width: '100%',
           flex: '1 1 auto',
           'min-height': '100%',
-          px: '5',
+          px: '7',
           pt: 4
         }}
       >
