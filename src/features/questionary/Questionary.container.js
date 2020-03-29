@@ -52,9 +52,15 @@ export const Questionary = ({ questions = [], onComplete }) => {
 /* answers:
   [
     {
-      sort: 1,
-      answer: 'asd',
-      explainMore: '',
+      id: 1,
+      answer: 'some answer in string if type is string or number if type is number',
+      explainMore: 'optional text here',
+      type: 'string | number'
+    },
+    {
+      id: 2,
+      answer: 'some answer in string if type is string or number if type is number',
+      explainMore: 'optional text here',
       type: 'string | number'
     }
   ]

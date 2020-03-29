@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import logo from './logo.svg';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
@@ -8,48 +8,41 @@ import { Introduction, Layout } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
 import { questions } from './questions';
 
-// const questions = [
-//   {
-//     // shape of the json objects
-//     question: 'How do you perceive your mental health?',
-//     answerType: 'multiple', // can be one of "yes-no" or "multiple" or "text"
-//     answerChoices: ['Sad', 'Neutral', 'Happy', 'Tired'], // all the choices for answerType: multiple
-//     explainMoreText: 'Specify profession', // the label to more info input text
-//     sort: 1, // the order of which the user will see the questions
-//     group: 'ex: personal question' // I don't know if we need this, but if we wanna group questions we could use this field
-//   },
-//   {
-//     // example 1 from the questions
-//     question: 'If you are quarantined, how many people are you quarantined with?',
-//     answerType: 'multiple',
-//     answerChoices: ['Worse than before', 'Similar / Unchanged', 'better than before'],
-//     explainMoreText: null,
-//     sort: 2
-//   },
-//   {
-//     // example 2 from the questions
-//     question: 'Have you experienced any shortage of household goods?',
-//     answerType: 'yes-no',
-//     answerChoices: [],
-//     explainMoreText: 'Specify goods',
-//     sort: 3
-//   },
-//   {
-//     // example 3 from the questions
-//     question: 'How many dependant do you have?',
-//     answerType: 'number',
-//     answerChoices: [],
-//     explainMoreText: null,
-//     sort: 4
-//   }
-// ];
-
 function App() {
+  const [surveysAggregationData, setSurveysAggregationData] = useState(null);
+
+  const handleSurveySubmission = useCallback(submission => {
+    /* add logic to handle survey submission here
+    /
+    / after the server responded with surveys aggregation data, call setSurveysAggregationData with
+    / that data as the argument
+    /
+    / submission object shape is like:
+    [
+      {
+        questionId: 1,
+        answer: 'some answer in string if type is string or number if type is number',
+        explainMore: 'optional text here',
+        type: 'string | number',
+        group:1
+      },
+      {
+        questionId: 2,
+        answer: 'some answer in string if type is string or number if type is number',
+        explainMore: 'optional text here',
+        type: 'string | number',
+        group:1
+      }
+    ]
+    I wonder if we need to add the question text there too?
+    */
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         {/* <Introduction /> */}
-        <Questionary questions={questions.sort((a, b) => a.sort < b.sort)} />
+        <Questionary questions={questions.sort((a, b) => a.sort < b.sort)} onSubmit={handleSurveySubmission} />
       </Layout>
     </ThemeProvider>
   );
