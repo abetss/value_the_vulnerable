@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useState, useCallback } from 'react';
-import { Text, Box, Flex, Button, jsx, Progress } from 'theme-ui';
+import { Text, Box, jsx } from 'theme-ui';
 import { Question } from './components/Questions';
 import { SecondaryButton, PrimaryButton } from '../../components';
 

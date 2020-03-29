@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { jsx } from 'theme-ui';
-import { Introduction, Layout } from '../components';
+import { Introduction, Layout, SubmissionThankYou } from '../components';
 import { Questionary } from '../features/questionary/Questionary.container';
 import { questions as JSONQuestions } from './questions';
 import { Report } from '../features/report/Report.container';
@@ -15,7 +15,7 @@ function App() {
   const [pageName, setPageName] = useState('introduction');
 
   const handleSurveySubmission = useCallback(submission => {
-    setPageName('report');
+    setPageName('thankyou');
     console.log('submission', submission);
     /* add logic to handle survey submission here
     /
@@ -60,14 +60,14 @@ function App() {
      */
   });
 
-  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
-  // .slice(0, 4); // uncomment if you wanna test submission with only 4 questions
+  const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort)).slice(0, 4); // uncomment if you wanna test submission with only 4 questions
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         {pageName === 'introduction' && <Introduction onNextClicked={setPageName} />}
         {pageName === 'survey' && <Questionary questions={sortedQuestions} onSubmit={handleSurveySubmission} />}
+        {pageName === 'thankyou' && <SubmissionThankYou onSetPage={setPageName} />}
         {pageName === 'report' && <Report />}
       </Layout>
     </ThemeProvider>

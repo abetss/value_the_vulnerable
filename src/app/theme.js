@@ -41,42 +41,42 @@ export const theme = {
       fontWeight: 'body'
     },
     h1: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 5
     },
     h2: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 4
     },
     h3: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 3
     },
     h4: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 2
     },
     h5: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 1
     },
     h6: {
-      color: 'text',
+      color: 'primary',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
