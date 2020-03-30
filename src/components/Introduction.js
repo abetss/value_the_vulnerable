@@ -1,6 +1,14 @@
 /** @jsx jsx */
 import { Heading, Box, Flex, jsx, Divider, Link, Text, Spinner } from 'theme-ui';
 import { PrimaryButton } from './PrimaryButton';
+import YouTube from 'react-youtube';
+
+const opts = {
+  width: '100%',
+  playerVars: {
+    autoplay: 0
+  }
+};
 
 export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
   return (
@@ -12,8 +20,11 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
         We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific
         representation.
       </Box>
+      <Box mt="4">
+        <YouTube videoId="m031LCLT0pQ" opts={opts} />
+      </Box>
 
-      <Flex mt={[4, 5, 6]} sx={{ flexDirection: 'column', alignItems: 'center' }}>
+      <Flex mt={[4, 4, 5]} sx={{ flexDirection: 'column', alignItems: 'center' }}>
         {showLoading && (
           <Flex sx={{ display: 'absolute', alignItems: 'center' }}>
             <Text>Loading questions</Text>
@@ -43,6 +54,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
             ml={2}
             onClick={() => onNextClicked('report')}
             sx={{
+              fontWeight: 600,
               '&:hover': {
                 cursor: 'pointer',
                 textDecoration: 'underline',

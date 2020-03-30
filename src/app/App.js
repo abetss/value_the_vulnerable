@@ -27,6 +27,7 @@ function App() {
 
   useEffect(function() {
     getQuestions().then(data => {
+      console.log('data', data);
       // will return the json stored at questions.all.data
       setQuestions(data);
     });
