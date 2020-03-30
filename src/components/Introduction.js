@@ -5,8 +5,8 @@ import { PrimaryButton } from './PrimaryButton';
 export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
   return (
     <Flex sx={{ flexDirection: 'column' }}>
-      <Heading mt="4" color="primary">
-        Introduction
+      <Heading mt="4" color="primary" as="h1">
+        Welcome
       </Heading>
       <Box mt="3">
         We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific

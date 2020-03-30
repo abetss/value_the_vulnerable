@@ -5,7 +5,7 @@ import { PrimaryButton } from './PrimaryButton';
 export const SubmissionThankYou = ({ questions = [], onSubmit, onSetPage }) => {
   return (
     <Flex sx={{ flexDirection: 'column' }}>
-      <Heading mt="4" color="primary">
+      <Heading mt="4" color="primary" as="h1">
         Thank you
       </Heading>
       <Box mt="3">
