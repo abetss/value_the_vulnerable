@@ -46,7 +46,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
       </Flex>
 
       <Divider mt={5} />
-      <Box mt="3">
+      <Box mt="3" mb={5}>
         <Flex>
           <Text>If you have already completed the survey, you can directly</Text>
           <Link
