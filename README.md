@@ -1,6 +1,6 @@
 Website url: https://value-the-vulnerable.web.app/
 
-Done aa team for the project
+Done as team for the project
 https://devpost.com/software/value-the-vulnerable
 
 Uses https://theme-ui.com for UI components, and firebase for database.
