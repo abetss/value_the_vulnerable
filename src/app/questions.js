@@ -27,7 +27,7 @@ export const newQuestions = [
     question: 'Are you currently working?',
     answerType: 'multiple',
     answerChoices: [
-      'yes, outside from home',
+      'Yes, outside of home',
       'Yes, from home',
       'No, on paid leave',
       'No, on unpaid leave',
