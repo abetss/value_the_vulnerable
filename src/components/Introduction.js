@@ -41,14 +41,14 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
             width: ['100%', '70%', '50%'],
             alignSelf: 'center'
           }}
-          title="Take Survey"
+          title="Start Survey"
         />
       </Flex>
 
       <Divider mt={5} />
       <Box mt="3" mb={5}>
         <Flex>
-          <Text>If you have already completed the survey, you can directly</Text>
+          <Text>If you don't want to take the survey, you can directly</Text>
           <Link
             as="a"
             ml={2}
