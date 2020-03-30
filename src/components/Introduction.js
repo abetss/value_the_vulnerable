@@ -10,7 +10,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
       </Heading>
       <Box mt="3">
         We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific
-        representation...
+        representation.
       </Box>
 
       <Flex mt={[4, 5, 6]} sx={{ flexDirection: 'column', alignItems: 'center' }}>
