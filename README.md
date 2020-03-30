@@ -1,4 +1,9 @@
-Uses https://theme-ui.com for UI components and theme
+Website url: https://value-the-vulnerable.web.app/
+
+Done aa team for the project
+https://devpost.com/software/value-the-vulnerable
+
+Uses https://theme-ui.com for UI components, and firebase for database.
 
 Trelo board: https://trello.com/b/3mOeDgo5/valuethevulnerable
 Trelo invitation link: https://trello.com/invite/b/3mOeDgo5/4296f473caf2afbca375529f1531f0ca/valuethevulnerable
@@ -14,11 +19,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
