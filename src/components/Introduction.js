@@ -17,8 +17,8 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
         Welcome
       </Heading>
       <Box mt="3">
-        We want to raise awareness to issues arising from the corona crisis. The results shown here are no scientific
-        representation.
+        We want to raise awareness to issues arising from the corona crisis by collecting surveys and illustrating them
+        in graphical forms. The results shown in the report are no scientific representation.
       </Box>
       <Box mt="4">
         <YouTube videoId="m031LCLT0pQ" opts={opts} />

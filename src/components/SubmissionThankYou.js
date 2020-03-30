@@ -9,7 +9,7 @@ export const SubmissionThankYou = ({ questions = [], onSubmit, onSetPage }) => {
         Thank you
       </Heading>
       <Box mt="3">
-        <Text>Thank you for completing the survey.</Text>
+        <Text>We appreciate your taking the time to complete our survey to help us raise awareness.</Text>
       </Box>
       <PrimaryButton
         onClick={() => onSetPage('report')}
