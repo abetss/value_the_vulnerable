@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import React, { useCallback, useState, useEffect } from 'react';
-import logo from './logo.svg';
+import { useCallback, useState, useEffect } from 'react';
+// import logo from './logo.svg';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { jsx } from 'theme-ui';
@@ -29,16 +29,14 @@ function App() {
   useEffect(function() {
     getQuestions().then(data => {
       // will return the json stored at questions.all.data
-      console.log('data', data);
+      // console.log('data', data);
       setQuestions(data);
     });
     getAnswers().then(answers => {
-      console.log('answers', JSON.stringify(answers, null, 2));
+      // console.log('answers', JSON.stringify(answers, null, 2));
       setSurveysAggregationData(answers);
     });
   }, []);
-
-  // const surveyResults =
 
   const sortedQuestions = questions.sort((a, b) => Number(a.sort) - Number(b.sort));
   // .slice(0, 4); // uncomment if you wanna test submission with only 4 questions

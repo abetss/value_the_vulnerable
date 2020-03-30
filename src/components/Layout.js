@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import { jsx } from 'theme-ui';
 import { Heading } from 'theme-ui';
 
@@ -22,7 +21,7 @@ export const Layout = props => {
           textAlign: 'center'
         }}
       >
-        <Heading as="h1" color="on-primary-text" display="inline-block">
+        <Heading as="h2" color="on-primary-text" display="inline-block">
           Value the Vulnerable
         </Heading>
       </header>

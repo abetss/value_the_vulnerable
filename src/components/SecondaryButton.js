@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import { Button, jsx } from 'theme-ui';
 
 export const SecondaryButton = ({ title, ...props }) => (
