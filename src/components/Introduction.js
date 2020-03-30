@@ -41,7 +41,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
             width: ['100%', '70%', '50%'],
             alignSelf: 'center'
           }}
-          title="Start Questionary"
+          title="Take Survey"
         />
       </Flex>
 
