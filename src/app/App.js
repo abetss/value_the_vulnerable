@@ -21,7 +21,6 @@ function App() {
     submitQuestionnaire(submission);
 
     getAnswers().then(answers => {
-      console.log('answers after submission', JSON.stringify(answers, null, 2));
       setSurveysAggregationData(answers);
     });
   }, []);
@@ -29,11 +28,9 @@ function App() {
   useEffect(function() {
     getQuestions().then(data => {
       // will return the json stored at questions.all.data
-      // console.log('data', data);
       setQuestions(data);
     });
     getAnswers().then(answers => {
-      // console.log('answers', JSON.stringify(answers, null, 2));
       setSurveysAggregationData(answers);
     });
   }, []);

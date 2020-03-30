@@ -33,7 +33,7 @@ export const Questionary = ({ questions = [], onSubmit }) => {
   const question = questions[questionIndex];
 
   const handlePrevClick = useCallback(() => {
-    if (questionIndex === -1) return;
+    if (questionIndex === 0) return;
     setQuestionIndex(questionIndex - 1);
   }, [questionIndex]);
 
@@ -83,7 +83,7 @@ export const Questionary = ({ questions = [], onSubmit }) => {
       <Question {...question} total={questions.length} onChange={handleOnChange} questionNumber={questionIndex + 1} />
 
       <Box alignItems="center">
-        <SecondaryButton disable={true} mt={[2, 4, 5]} title="Prev" onClick={handlePrevClick} />
+        <SecondaryButton mt={[2, 4, 5]} title="Prev" onClick={handlePrevClick} />
         {questionIndex < questions.length - 1 && (
           <PrimaryButton mt={[2, 4, 5]} title="Next" onClick={handleNextClick} />
         )}
