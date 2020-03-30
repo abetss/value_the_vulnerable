@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { useCallback, useState, useEffect } from 'react';
-// import logo from './logo.svg';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { jsx } from 'theme-ui';
