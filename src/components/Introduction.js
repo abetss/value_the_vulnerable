@@ -48,7 +48,7 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
       <Divider mt={5} />
       <Box mt="3" mb={5}>
         <Flex>
-          <Text>If you don't want to take the survey, you can directly</Text>
+          <Text>If you don't want to take the survey, you can directly
           <Link
             as="a"
             ml={2}
@@ -64,7 +64,8 @@ export const Introduction = ({ onNextClicked, showLoading, ...props }) => {
           >
             see the report
           </Link>
-          <Text>.</Text>
+          .
+          </Text>
         </Flex>
       </Box>
     </Flex>
